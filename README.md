@@ -8,6 +8,7 @@ Flash to SD card:
 sudo umount /dev/sda*
 ls tmp/deploy/images/beaglebone-yocto/*.rootfs.wic
 sudo bmaptool copy tmp/deploy/images/beaglebone-yocto/*.rootfs.wic /dev/sda
+sudo bmaptool copy tmp/deploy/images/raspberrypi3-64/core-image-minimal-raspberrypi3-64.rootfs.wic.bz2 /dev/sda
 
 Add cmd utils from busybox :
 source oe-init-build-env BBB/

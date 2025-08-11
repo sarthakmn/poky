@@ -11,3 +11,5 @@ TOOLCHAIN_TARGET_TASK += "alsa-lib-dev"
 IMAGE_INSTALL += "audio audio-data"
 IMAGE_INSTALL:append = " kernel-modules"
 
+# Add support for serial login terminal
+IMAGE_INSTALL:append = " systemd-serialgetty"
