@@ -13,3 +13,6 @@ IMAGE_INSTALL:append = " kernel-modules"
 
 # Add support for serial login terminal
 IMAGE_INSTALL:append = " systemd-serialgetty"
+
+# Force psplash components
+IMAGE_INSTALL:append = " psplash"
