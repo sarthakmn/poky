@@ -1,8 +1,8 @@
 Poky enviroment to learn basics of YOCTO
 
 Reset SD card :
-sudo wipefs -a /dev/sda
-sudo dd if=/dev/zero of=/dev/sda bs=1M count=10
+sudo wipefs --all --force /dev/sda*
+sudo dd if=/dev/zero of=/dev/sda* bs=1M count=10
 
 Flash to SD card:
 sudo umount /dev/sda*

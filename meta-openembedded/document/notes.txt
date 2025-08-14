@@ -1,0 +1,24 @@
+Add local.conf if making weston image :
+
+# Enable PAM (Pluggable Authentication Modules) support
+DISTRO_FEATURES:append = " pam"
+
+# 1. First remove ALL existing wxwidgets config
+PACKAGECONFIG:remove:pn-wxwidgets = "gtk qt x11"
+
+# 2. Then force no_gui mode
+PACKAGECONFIG:append:pn-wxwidgets = " no_gui"
+
+# 3. Disable ALL X11 system-wide
+DISTRO_FEATURES:remove = "x11"
+
+# 4. Skip broken SPDX
+SPDX_SKIP_pn-wxwidgets = "1"
+
+# Clean Weston config
+PACKAGECONFIG:remove:pn-weston = "xwayland"
+
+LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+
+# add splash screen
+resize : convert merc.png -resize 800x480! -depth 16 rgb565:merc.rgb565

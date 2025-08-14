@@ -29,3 +29,6 @@ do_install:append:raspberrypi3-64() {
     # Explicitly install the psplash binary
     install -m 0755 ${B}/psplash ${D}${bindir}/psplash
 }
+
+#resize image : convert merc.png -resize 800x480! -depth 16 rgb565:merc.png
+#make header : ./make-image-header.sh ../files/merc.png 
