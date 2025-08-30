@@ -27,6 +27,9 @@ CMDLINE_LOGO ?= '${@oe.utils.conditional("DISABLE_RPI_BOOT_LOGO", "1", "logo.nol
 # to enable kernel debugging.
 CMDLINE_DEBUG ?= ""
 
+# Hide blinking cursor and disable console blanking
+CMDLINE_CURSOR ?= "vt.global_cursor_default=0 consoleblank=0"
+
 # Add a request to isolate processors from the Linux scheduler. ISOLATED_CPUS
 # may have the form of a comma separated list of processor numbers "0,1,3", a
 # range "0-2", a combination of the two "0-1,3", or a single processor you may
@@ -61,6 +64,7 @@ CMDLINE = " \
     ${CMDLINE_DEBUG} \
     ${CMDLINE_RNDIS} \
     ${CMDLINE_IFNAMES} \
+    ${CMDLINE_CURSOR} \
     "
 
 do_compile() {
