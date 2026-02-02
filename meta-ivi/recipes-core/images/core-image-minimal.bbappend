@@ -16,3 +16,8 @@ IMAGE_INSTALL:append = " systemd-serialgetty"
 
 # Force splash components
 IMAGE_INSTALL:append = " boot-animation coreutils"
+
+# Qt6 and graphics support
+IMAGE_INSTALL:append = " qtbase qtdeclarative"
+IMAGE_INSTALL:append = " libgles2 libgbm libdrm"
+IMAGE_INSTALL:append = " hmi-ivi"

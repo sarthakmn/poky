@@ -1,0 +1,11 @@
+[Unit]
+Description=Qt6 IVI HMI Application
+After=boot-animation.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hmi-ivi.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
